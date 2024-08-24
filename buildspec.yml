@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies (if any)"
+  pre_build:
+    commands:
+      - echo "Starting build process"
+  build:
+    commands:
+      - echo "Packaging the HTML file"
+      - mkdir -p output
+      - cp index.html output/index.html
+  post_build:
+    commands:
+      - echo "Build complete. Preparing for deployment."
+
+artifacts:
+  files:
+    - output/index.html
+  discard-paths: yes
